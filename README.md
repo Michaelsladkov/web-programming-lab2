@@ -1,6 +1,8 @@
 # Web programming Lab 2
 My second assignment on ITMO CSE Web Programming Course
 
+### Option: 72101
+
 ## Task:
 Разработать веб-приложение на базе сервлетов и JSP, определяющее попадание точки на координатной плоскости в заданную область.
 
