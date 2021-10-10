@@ -14,17 +14,41 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
 <table>
     <tr>
         <th>Выберите точку</th>
     </tr>
     <tr id="content">
         <td class="image container">
-            <img src="../images/areas.png" alt="sorry">
+            <svg id="graph" viewBox="0 0 220 220" width="220" height="220"
+                 xmlns="http://www.w3.org/2000/svg"
+                 >
+                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+                        markerWidth="6" markerHeight="6"
+                        orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" />
+                </marker>
+
+                <line
+                    x1="50%"
+                    y1="2%"
+                    x2="50%"
+                    y2="98%"
+                    stroke="black"
+                    stroke-width="2"
+                    marker-start="url(#arrow)"
+                />
+
+                <line
+                        x1="2%"
+                        y1="50%"
+                        x2="98%"
+                        y2="50%"
+                        stroke="black"
+                        stroke-width="2"
+                        marker-end="url(#arrow)"
+                />
+            </svg>
         </td>
         <td class="form container">
             <p>Параметры</p>

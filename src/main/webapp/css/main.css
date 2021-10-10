@@ -17,10 +17,14 @@ table {
 #content td {
     border: black solid 4px;
     padding: 20px;
-    height: 230px;
+    height: 420px;
     display: inline-block;
     margin: 30px;
     border-radius: 6px;
+}
+
+#content {
+    height: 420px;
 }
 
 #errorDisplay {
