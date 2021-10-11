@@ -11,6 +11,7 @@
 .text-field {
     border-radius: 2px;
     border: 2px solid black;
+    padding: 3px;
 }
 
 .text-field:active {
@@ -34,7 +35,7 @@ input {
 }
 
 .checkbox:hover {
-    background-color: gray;
+    background-color: #da9bff;
 }
 
 .checkbox:checked {

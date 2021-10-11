@@ -31,7 +31,7 @@
                 <div id="x_value" class="field">
                     X:
                     <label>
-                        <input class="text-field" type="text" name="X" autocomplete="off">
+                        <input class="text-field" type="text" name="X" autocomplete="off" required maxlength="17">
                     </label>
                 </div>
                 <div id="y_value" class="field">
