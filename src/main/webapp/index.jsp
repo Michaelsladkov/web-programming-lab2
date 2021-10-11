@@ -31,7 +31,7 @@
                 <div id="x_value" class="field">
                     X:
                     <label>
-                        <input type="text" name="X">
+                        <input class="text-field" type="text" name="X" autocomplete="off">
                     </label>
                 </div>
                 <div id="y_value" class="field">
@@ -39,55 +39,55 @@
                     <div class="checkbox_block">
                         -4 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="-4">
+                            <input class="checkbox" type="checkbox" name="Y" value="-4">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         -3 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="-3">
+                            <input class="checkbox" type="checkbox" name="Y" value="-3">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         -2 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="-2">
+                            <input class="checkbox" type="checkbox" name="Y" value="-2">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         -1 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="-1">
+                            <input class="checkbox" type="checkbox" name="Y" value="-1">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         0 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="0">
+                            <input class="checkbox" type="checkbox" name="Y" value="0">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         1 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="1">
+                            <input class="checkbox" type="checkbox" name="Y" value="1">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         2 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="2">
+                            <input class="checkbox" type="checkbox" name="Y" value="2">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         3 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="3">
+                            <input class="checkbox" type="checkbox" name="Y" value="3">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         4 <br>
                         <label>
-                            <input type="checkbox" name="Y" value="4">
+                            <input class="checkbox" type="checkbox" name="Y" value="4">
                         </label>
                     </div>
                 </div>
@@ -96,35 +96,35 @@
                     <div class="checkbox_block">
                         1 <br>
                         <label>
-                            <input type="checkbox" name="R" value="1">
+                            <input class="checkbox" type="checkbox" name="R" value="1">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         2 <br>
                         <label>
-                            <input type="checkbox" name="R" value="2">
+                            <input class="checkbox" type="checkbox" name="R" value="2">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         3 <br>
                         <label>
-                            <input type="checkbox" name="R" value="3">
+                            <input class="checkbox" type="checkbox" name="R" value="3">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         4 <br>
                         <label>
-                            <input type="checkbox" name="R" value="4">
+                            <input class="checkbox" type="checkbox" name="R" value="4">
                         </label>
                     </div>
                     <div class="checkbox_block">
                         5 <br>
                         <label>
-                            <input type="checkbox" name="R" value="5">
+                            <input class="checkbox" type="checkbox" name="R" value="5">
                         </label>
                     </div>
                 </div>
-                <input type="submit">
+                <input id="submit-button" type="submit">
             </form>
         </td>
     </tr>
