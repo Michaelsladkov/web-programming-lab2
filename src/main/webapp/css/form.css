@@ -12,6 +12,7 @@
     border-radius: 2px;
     border: 2px solid black;
     padding: 3px;
+    background: transparent;
 }
 
 .text-field:active {
