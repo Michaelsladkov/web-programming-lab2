@@ -23,9 +23,8 @@ public class AreaCheckServlet extends HttpServlet {
         boolean succcess = checkArea(x, y, r);
         HttpSession session = req.getSession();
         Object startTime = session.getAttribute("start-time");
-        if (!(startTime instanceof Long)) return;
         ShotBean bean = new ShotBean(x, y, r, LocalDateTime.now(),
-                (double) (System.nanoTime() - (Long) startTime) / 1000000, succcess);
+                ((double) (System.nanoTime() - (Long) startTime)) / 1000000, succcess);
         LinkedList<ShotBean> list;
         if (!(session.getAttribute("shots") instanceof LinkedList)) {
             list = new LinkedList<ShotBean>();
@@ -34,7 +33,7 @@ public class AreaCheckServlet extends HttpServlet {
         } else {
             list = (LinkedList<ShotBean>) session.getAttribute("shots");
             list.add(bean);
-            req.setAttribute("list", list);
+            session.setAttribute("shots", list);
         }
         System.out.println(list.size());
         RequestDispatcher dispatcher = req.getRequestDispatcher("./index.jsp");
@@ -46,7 +45,7 @@ public class AreaCheckServlet extends HttpServlet {
             if (y > 0) return true;
             else  return x*x + y*y <= r*r;
         } else {
-            if (y > 0) return y <= x + r;
+            if (y > 0) return y + x <= r;
             else return 2 * x > -r && y > -r;
         }
     }

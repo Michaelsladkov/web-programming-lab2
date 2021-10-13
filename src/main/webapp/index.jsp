@@ -177,7 +177,7 @@
                     <th>Время исполнения</th>
                     <th>Результат</th>
                 </tr>
-                <c:forEach var="shot" items="${list}">
+                <c:forEach var="shot" items="${shots}">
                     <tr>
                         <td>${shot.getX()}</td>
                         <td>${shot.getY()}</td>
