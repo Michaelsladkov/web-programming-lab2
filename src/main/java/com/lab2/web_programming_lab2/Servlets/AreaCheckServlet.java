@@ -24,7 +24,8 @@ public class AreaCheckServlet extends HttpServlet {
         HttpSession session = req.getSession();
         Object startTime = session.getAttribute("start-time");
         if (!(startTime instanceof Long)) return;
-        ShotBean bean = new ShotBean(x, y, r, LocalDateTime.now(), (System.nanoTime() - (Long) startTime) / 1000000, succcess);
+        ShotBean bean = new ShotBean(x, y, r, LocalDateTime.now(),
+                (double) (System.nanoTime() - (Long) startTime) / 1000000, succcess);
         LinkedList<ShotBean> list;
         if (!(session.getAttribute("shots") instanceof LinkedList)) {
             list = new LinkedList<ShotBean>();

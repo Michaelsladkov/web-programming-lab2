@@ -13,7 +13,8 @@ import java.io.PrintWriter;
 @WebServlet(name = "controller", value = "/controller")
 public class ControllerServlet extends HttpServlet {
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        response.setCharacterEncoding ("UTF-8");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         session.setAttribute("start-time", System.nanoTime());
