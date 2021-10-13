@@ -1,4 +1,4 @@
-package com.lab2.web_programming_lab2;
+package com.lab2.web_programming_lab2.Servlets;
 
 import java.io.*;
 import javax.servlet.http.*;

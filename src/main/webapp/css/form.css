@@ -1,4 +1,4 @@
-.checkbox_block {
+.radio_block {
     display: inline-block;
     text-align: center;
 }
@@ -24,7 +24,7 @@ input {
     margin: 0;
     border: 0;
 }
-.checkbox {
+.radio {
     -webkit-appearance: none;
     background-color: transparent;
     border: 2px solid black;
@@ -35,11 +35,11 @@ input {
     position: relative;
 }
 
-.checkbox:hover {
+.radio:hover {
     background-color: #da9bff;
 }
 
-.checkbox:checked {
+.radio:checked {
     background-color: black;
 }
 

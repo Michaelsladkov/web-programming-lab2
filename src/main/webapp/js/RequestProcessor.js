@@ -1,21 +1,22 @@
 function makeRequest() {
     if (!validation()) return false;
     $.ajax({
-        url: "../php/Shot.php",
+        url: "./controller",
         type: "POST",
-        data: `X=${getXNumberValue()}&Y=${getYNumberValue()}&R=${getRNumberValue()}`,
+        data: `X=${getXNumberValue()}&Y=${getYNumberValue()}&R=${getRNumberValue()}&time-offset=${getTimeOffset()}`,
         success: function (response) {
+            console.log(response);
             let data = JSON.parse(response);
             appendLine(data);
         }
     })
     return false;
 }
-function getXNumberValue() {
-    return parseFloat(form.elements.X.value);
-}
 function getYNumberValue() {
-    return $('#y_value :checked').val();
+    return parseFloat(form.elements.Y.value);
+}
+function getXNumberValue() {
+    return $('#x_value :checked').val();
 }
 function getRNumberValue() {
     return $('#r_value :checked').val();

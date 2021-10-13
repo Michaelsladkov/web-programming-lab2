@@ -1,41 +1,41 @@
 let form;
-function setFormAndBoxesForValidator(newForm, yBoxesArray, rBoxesArray) {
+function setFormAndBoxesForValidator(newForm, xBoxesArray, rBoxesArray) {
     form = newForm;
-    yBoxes = yBoxesArray;
+    xBoxes = xBoxesArray;
     rBoxes = rBoxesArray;
     form.onsubmit = makeRequest;
-    form.elements.X.oninput = checkX;
+    form.elements.Y.oninput = checkX;
 }
 
 function validation() {
     return checkX() && checkY() && checkR();
 }
 
-function checkX() {
+function checkY() {
     clearErrors();
-    let xValue = form.elements.X.value;
-    let xNumberValue = parseFloat(xValue);
-    if (xValue === "" ||
-        ((!xValue.match(/^-?[0-9]*$/)) && (!xValue.match(/^-?[0-9]*[\.,][0-9]+$/)))) {
-        showMessage("Введите число X");
+    let yValue = form.elements.Y.value;
+    let yNumberValue = parseFloat(yValue);
+    if (yValue === "" ||
+        ((!yValue.match(/^-?[0-9]*$/)) && (!yValue.match(/^-?[0-9]*[\.,][0-9]+$/)))) {
+        showMessage("Введите число Y");
         return false;
     }
-    if (xNumberValue <= (-5) || xNumberValue >= 3) {
-        showMessage("Число Х должно принадлежать отрезку (-5 ... 3)");
+    if (yNumberValue <= (-5) || yNumberValue >= 5) {
+        showMessage("Число Y должно принадлежать отрезку (-5 ... 5)");
         return false;
     }
     return true;
 }
 
-function checkY() {
-    let ySelected = false;
-    for (let yBox of yBoxes) {
-        if (yBox.checked) {
-            ySelected = true;
+function checkX() {
+    let xSelected = false;
+    for (let xBox of xBoxes) {
+        if (xBox.checked) {
+            xSelected = true;
         }
     }
-    if (!ySelected) {
-        showMessage("Установите параметр Y");
+    if (!xSelected) {
+        showMessage("Установите параметр X");
         return false;
     }
     return true

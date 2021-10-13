@@ -1,17 +1,17 @@
 window.onload = function () {
     let form = document.forms.MainForm;
-    let yBoxes = form.elements.Y;
+    let xBoxes = form.elements.X;
     let rBoxes = form.elements.R;
-    setYBoxes(yBoxes);
+    setXBoxes(xBoxes);
     setRBoxes(rBoxes);
     for (let rBox of rBoxes) {
         rBox.onclick = switchRAction;
     }
-    for (let yBox of yBoxes) {
-        yBox.onclick = switchYAction;
+    for (let xBox of xBoxes) {
+        xBox.onclick = switchYAction;
     }
     let errorDisplay = document.getElementById("errorDisplay");
     setDisplay(errorDisplay);
-    setFormAndBoxesForValidator(form, yBoxes, rBoxes);
-    form.elements.X.onclick = clearErrors;
+    setFormAndBoxesForValidator(form, xBoxes, rBoxes);
+    form.elements.Y.onclick = clearErrors;
 }

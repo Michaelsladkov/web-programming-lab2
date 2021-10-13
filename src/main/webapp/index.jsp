@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/results.css">
     <script src="js/Injector.js"></script>
-    <script src="js/CheckBoxSwitcher.js"></script>
     <script src="js/ErrorsDisplay.js"></script>
     <script src="js/Validator.js"></script>
     <script src="js/LineAppender.js"></script>
     <script src="js/RequestProcessor.js"></script>
+    <script src="js/CheckBoxSwitcher.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 </head>
 <body>
@@ -32,103 +32,104 @@
         </td>
         <td class="form container">
             <p>Параметры</p>
-            <form method="post" action="../php/Shot.php" name="MainForm">
+            <form method="post" action="./controller" name="MainForm">
                 <div id="x_value" class="field">
                     X:
-                    <label>
-                        <input class="text-field" type="text" name="X" autocomplete="off" required maxlength="17">
-                    </label>
+                    <div class="radio_block">
+                        -2 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="-2">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        -1.5 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="-1.5">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        -1 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="-1">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        -0.5 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="-0.5">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        0 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="0">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        0.5 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="0.5">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        1 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="1">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        1.5 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="1.5">
+                        </label>
+                    </div>
+                    <div class="radio_block">
+                        2 <br>
+                        <label>
+                            <input class="radio" type="radio" name="X" value="2">
+                        </label>
+                    </div>
                 </div>
                 <div id="y_value" class="field">
                     Y:
-                    <div class="checkbox_block">
-                        -4 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="-4">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        -3 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="-3">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        -2 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="-2">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        -1 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="-1">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        0 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="0">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        1 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="1">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        2 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="2">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        3 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="3">
-                        </label>
-                    </div>
-                    <div class="checkbox_block">
-                        4 <br>
-                        <label>
-                            <input class="checkbox" type="checkbox" name="Y" value="4">
-                        </label>
-                    </div>
+                    <label>
+                        <input class="text-field" type="text" name="Y" autocomplete="off" maxlength="17">
+                    </label>
                 </div>
                 <div id="r_value" class="field">
                     R:
-                    <div class="checkbox_block">
+                    <div class="radio_block">
                         1 <br>
                         <label>
-                            <input class="checkbox" type="checkbox" name="R" value="1">
+                            <input class="radio" type="radio" name="R" value="1">
                         </label>
                     </div>
-                    <div class="checkbox_block">
+                    <div class="radio_block">
                         2 <br>
                         <label>
-                            <input class="checkbox" type="checkbox" name="R" value="2">
+                            <input class="radio" type="radio" name="R" value="2">
                         </label>
                     </div>
-                    <div class="checkbox_block">
+                    <div class="radio_block">
                         3 <br>
                         <label>
-                            <input class="checkbox" type="checkbox" name="R" value="3">
+                            <input class="radio" type="radio" name="R" value="3">
                         </label>
                     </div>
-                    <div class="checkbox_block">
+                    <div class="radio_block">
                         4 <br>
                         <label>
-                            <input class="checkbox" type="checkbox" name="R" value="4">
+                            <input class="radio" type="radio" name="R" value="4">
                         </label>
                     </div>
-                    <div class="checkbox_block">
+                    <div class="radio_block">
                         5 <br>
                         <label>
-                            <input class="checkbox" type="checkbox" name="R" value="5">
+                            <input class="radio" type="radio" name="R" value="5">
                         </label>
                     </div>
                 </div>
+                <input id="time-offset" name="time-offset" type="hidden">
                 <input id="submit-button" type="submit">
             </form>
         </td>
