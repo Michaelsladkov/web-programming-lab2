@@ -1,12 +1,14 @@
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="com.lab2.web_programming_lab2.Data.ShotBean" %>
-<%@ page language="java" contentType="text/html;charset=utf-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Lab 2</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/graphics.css">

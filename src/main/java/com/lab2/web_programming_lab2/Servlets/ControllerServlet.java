@@ -73,7 +73,9 @@ public class ControllerServlet extends HttpServlet {
 
         if (dataIsCorrect) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("./check");
-            System.out.println("forwarded");
+            dispatcher.forward(request, response);
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
             dispatcher.forward(request, response);
         }
     }
