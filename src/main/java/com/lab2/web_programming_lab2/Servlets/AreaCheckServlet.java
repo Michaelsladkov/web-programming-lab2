@@ -1,14 +1,17 @@
 package com.lab2.web_programming_lab2.Servlets;
 
+import com.lab2.web_programming_lab2.Data.ShotBean;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
 
 @WebServlet(name = "checkArea", value = "/check")
 public class AreaCheckServlet extends HttpServlet {
@@ -18,47 +21,23 @@ public class AreaCheckServlet extends HttpServlet {
         float y = Float.parseFloat(req.getParameter("Y"));
         int r = Integer.parseInt(req.getParameter("R"));
         boolean succcess = checkArea(x, y, r);
-        String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-mm-yy HH:mm:ss"));
-        PrintWriter out = resp.getWriter();
-        StringBuilder builder = new StringBuilder();
-        builder.append("{\"X\": ");
-        builder.append('\"');
-        builder.append(x);
-        builder.append('\"');
-        builder.append(',');
-
-        builder.append("\"Y\": ");
-        builder.append('\"');
-        builder.append(y);
-        builder.append('\"');
-        builder.append(',');
-
-        builder.append("\"R\": ");
-        builder.append('\"');
-        builder.append(r);
-        builder.append('\"');
-        builder.append(',');
-
-        builder.append("\"now\": ");
-        builder.append('\"');
-        builder.append(date);
-        builder.append('\"');
-        builder.append(',');
-
-        builder.append("\"execution\": ");
-        builder.append('\"');
-        builder.append(date);
-        builder.append('\"');
-        builder.append(',');
-
-        builder.append("\"result\": ");
-        builder.append('\"');
-        builder.append(succcess ? "попал" : "не попал");
-        builder.append('\"');
-        builder.append('}');
-        System.out.println(builder);
-        resp.addHeader("Content-Type", "text/html;charset=UTF-8");
-        out.println(builder);
+        HttpSession session = req.getSession();
+        Object startTime = session.getAttribute("start-time");
+        if (!(startTime instanceof Long)) return;
+        ShotBean bean = new ShotBean(x, y, r, LocalDateTime.now(), (System.nanoTime() - (Long) startTime) / 1000000, succcess);
+        LinkedList<ShotBean> list;
+        if (!(session.getAttribute("shots") instanceof LinkedList)) {
+            list = new LinkedList<ShotBean>();
+            list.add(bean);
+            session.setAttribute("shots", list);
+        } else {
+            list = (LinkedList<ShotBean>) session.getAttribute("shots");
+            list.add(bean);
+            req.setAttribute("list", list);
+        }
+        System.out.println(list.size());
+        RequestDispatcher dispatcher = req.getRequestDispatcher("./index.jsp");
+        dispatcher.forward(req, resp);
     }
 
     private boolean checkArea(float x, float y, int r) {

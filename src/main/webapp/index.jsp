@@ -1,8 +1,12 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="com.lab2.web_programming_lab2.Data.ShotBean" %>
+<%@ page language="java" contentType="text/html;charset=utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <meta charset="UTF-8">
+    <title>Lab 2</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/graphics.css">
@@ -150,6 +154,16 @@
                     <th>Время исполнения</th>
                     <th>Результат</th>
                 </tr>
+                <c:forEach var="shot" items="${list}">
+                    <tr>
+                        <td>${shot.getX()}</td>
+                        <td>${shot.getY()}</td>
+                        <td>${shot.getR()}</td>
+                        <td>${shot.getTime()}</td>
+                        <td>${shot.getExecutionTime()}</td>
+                        <td>${shot.isSuccess()}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </td>
     </tr>

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -14,6 +15,9 @@ public class ControllerServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
+        session.setAttribute("start-time", System.nanoTime());
+        request.setCharacterEncoding("UTF-8");
         boolean dataIsCorrect = true;
         String xString = request.getParameter("X");
         if (xString == null) {
@@ -22,7 +26,7 @@ public class ControllerServlet extends HttpServlet {
             float x;
             try {
                 x = Float.parseFloat(xString);
-                if (x <= -2 || x>= 2) {
+                if (x < -2 || x > 2) {
                     out.println("X is not valid");
                     dataIsCorrect = false;
                 }
@@ -52,15 +56,18 @@ public class ControllerServlet extends HttpServlet {
         String rString = request.getParameter("R");
         if (rString == null) {
             out.println("R is not assigned");
+            dataIsCorrect = false;
         } else {
             int r;
             try {
                 r = Integer.parseInt(rString);
                 if (r < 1 || r > 5) {
                     out.println("R is not valid");
+                    dataIsCorrect = false;
                 }
             } catch (NumberFormatException e) {
                 out.println("R can not be parsed");
+                dataIsCorrect = false;
             }
         }
 
@@ -69,6 +76,5 @@ public class ControllerServlet extends HttpServlet {
             System.out.println("forwarded");
             dispatcher.forward(request, response);
         }
-        System.out.println(dataIsCorrect);
     }
 }

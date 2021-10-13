@@ -3,7 +3,7 @@ function setFormAndBoxesForValidator(newForm, xBoxesArray, rBoxesArray) {
     form = newForm;
     xBoxes = xBoxesArray;
     rBoxes = rBoxesArray;
-    form.onsubmit = makeRequest;
+    form.onsubmit = validation;
     form.elements.Y.oninput = checkX;
 }
 
