@@ -42,7 +42,7 @@ public class AreaCheckServlet extends HttpServlet {
 
     private boolean checkArea(float x, float y, int r) {
         if (x > 0) {
-            if (y > 0) return true;
+            if (y > 0) return false;
             else  return x*x + y*y <= r*r;
         } else {
             if (y > 0) return y + x <= r;

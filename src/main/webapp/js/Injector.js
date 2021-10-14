@@ -14,4 +14,5 @@ window.onload = function () {
     setDisplay(errorDisplay);
     setFormAndBoxesForValidator(form, xBoxes, rBoxes);
     form.elements.Y.onclick = clearErrors;
+    $("graph").on("click", processClick);
 }

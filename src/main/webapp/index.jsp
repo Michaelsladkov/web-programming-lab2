@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/results.css">
     <script src="js/Injector.js"></script>
+    <script src="js/ClickProcessing.js"></script>
     <script src="js/ErrorsDisplay.js"></script>
     <script src="js/Validator.js"></script>
     <script src="js/LineAppender.js"></script>
