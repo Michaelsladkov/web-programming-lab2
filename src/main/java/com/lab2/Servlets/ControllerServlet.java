@@ -1,4 +1,4 @@
-package com.lab2.web_programming_lab2.Servlets;
+package com.lab2.Servlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,18 +10,16 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "controller", value = "/controller")
 public class ControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        response.setCharacterEncoding ("UTF-8");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         session.setAttribute("start-time", System.nanoTime());
+        System.out.println("time started");
         request.setCharacterEncoding("UTF-8");
         boolean dataIsCorrect = true;
         String xString = request.getParameter("X");
-        System.out.println(xString);
         if (xString == null) {
             out.println("X is not assigned");
         } else {
@@ -70,5 +68,11 @@ public class ControllerServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
             dispatcher.forward(request, response);
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
+        dispatcher.forward(request, response);
     }
 }

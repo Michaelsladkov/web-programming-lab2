@@ -1,5 +1,5 @@
 <%@ page import="java.util.LinkedList" %>
-<%@ page import="com.lab2.web_programming_lab2.Data.ShotBean" %>
+<%@ page import="com.lab2.Data.ShotBean" %>
 <%@ page import="java.util.Deque" %>
 <%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -175,7 +175,7 @@
                     <th>Y</th>
                     <th>R</th>
                     <th>Время обращения</th>
-                    <th>Время исполнения</th>
+                    <th>Время исполнения, мс</th>
                     <th>Результат</th>
                 </tr>
                 <%

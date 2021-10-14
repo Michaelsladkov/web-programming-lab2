@@ -1,10 +1,9 @@
-package com.lab2.web_programming_lab2.Servlets;
+package com.lab2.Servlets;
 
-import com.lab2.web_programming_lab2.Data.ShotBean;
+import com.lab2.Data.ShotBean;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 
-@WebServlet(name = "checkArea", value = "/check")
 public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +33,6 @@ public class AreaCheckServlet extends HttpServlet {
             list.add(bean);
             session.setAttribute("shots", list);
         }
-        System.out.println(list.size());
         RequestDispatcher dispatcher = req.getRequestDispatcher("./index.jsp");
         dispatcher.forward(req, resp);
     }

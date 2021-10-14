@@ -1,4 +1,4 @@
-package com.lab2.web_programming_lab2.Data;
+package com.lab2.Data;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
