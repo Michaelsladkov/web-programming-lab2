@@ -5,12 +5,14 @@ const rY = 343;
 function processClick (eventObj) {
     let r = getRNumberValue();
     if (!checkR()) return;
-    let rawX = eventObj.clientX - centerX;
-    let rawY = centerY - eventObj.clientY;
+    let rawX = eventObj.pageX - centerX;
+    let rawY = centerY - eventObj.pageY;
     let xNormalized = rawX / (rX - centerX);
     let yNormalized = rawY / (rY - centerY);
     let x = xNormalized * r;
     let y = yNormalized * r;
+    x = x.toFixed(2);
+    y = y.toFixed(2);
     console.log(x + "   " + y);
     sendForm(x, y);
 }

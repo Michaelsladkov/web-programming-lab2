@@ -178,16 +178,27 @@
                     <th>Время исполнения</th>
                     <th>Результат</th>
                 </tr>
-                <c:forEach var="shot" items="${shots}">
-                    <tr>
-                        <td>${shot.getX()}</td>
-                        <td>${shot.getY()}</td>
-                        <td>${shot.getR()}</td>
-                        <td>${shot.getTime()}</td>
-                        <td>${shot.getExecutionTime()}</td>
-                        <td>${shot.isSuccess()}</td>
-                    </tr>
-                </c:forEach>
+                <%
+                    if (maybeList instanceof List && ((List) maybeList).size() > 0
+                            && ((List) maybeList).get(0) instanceof ShotBean) {
+                        List<ShotBean> list = (List<ShotBean>) maybeList;
+                        for (int i = list.size() - 1; i >= 0; i--) {
+                            ShotBean bean = list.get(i);
+                            int x = 208 + (int)((bean.getX() / bean.getR()) * 160);
+                            int y = 210 + (int)((-bean.getY() / bean.getR()) * 160);
+                            out.println(String.format(circleFormat, x, y));
+                            out.println("<tr>");
+                            out.println("<td>" + bean.getX() + "</td>");
+                            out.println("<td>" + bean.getY() + "</td>");
+                            out.println("<td>" + bean.getR() + "</td>");
+                            out.println("<td>" + bean.getTime() + "</td>");
+                            out.println("<td>" + bean.getExecutionTime() + "</td>");
+                            out.println("<td>" + bean.isSuccess() + "</td>");
+                            out.println("</tr>");
+                        }
+
+                    }
+                %>
             </table>
         </td>
     </tr>
