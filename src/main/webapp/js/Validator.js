@@ -29,6 +29,9 @@ function checkY() {
 
 function checkX() {
     let xSelected = false;
+    if ($("#hidden-x").attr("value")) {
+        return true;
+    }
     for (let xBox of xBoxes) {
         if (xBox.checked) {
             xSelected = true;

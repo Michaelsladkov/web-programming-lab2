@@ -25,7 +25,6 @@
     <script src="js/ErrorsDisplay.js"></script>
     <script src="js/Validator.js"></script>
     <script src="js/LineAppender.js"></script>
-    <script src="js/RequestProcessor.js"></script>
     <script src="js/CheckBoxSwitcher.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 </head>
@@ -63,6 +62,7 @@
             <form method="post" action="./controller" name="MainForm">
                 <div id="x_value" class="field">
                     X:
+                    <input type="hidden" name="X" id="hidden-x">
                     <div class="radio_block">
                         -2 <br>
                         <label>
@@ -121,7 +121,7 @@
                 <div id="y_value" class="field">
                     Y:
                     <label>
-                        <input class="text-field" type="text" name="Y" autocomplete="off" maxlength="17">
+                        <input id="y-field" class="text-field" type="text" name="Y" autocomplete="off" maxlength="17">
                     </label>
                 </div>
                 <div id="r_value" class="field">

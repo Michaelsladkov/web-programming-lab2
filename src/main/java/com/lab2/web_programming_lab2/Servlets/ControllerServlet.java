@@ -21,16 +21,12 @@ public class ControllerServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         boolean dataIsCorrect = true;
         String xString = request.getParameter("X");
+        System.out.println(xString);
         if (xString == null) {
             out.println("X is not assigned");
         } else {
-            float x;
             try {
-                x = Float.parseFloat(xString);
-                if (x < -2 || x > 2) {
-                    out.println("X is not valid");
-                    dataIsCorrect = false;
-                }
+                Float.parseFloat(xString);
             } catch (NumberFormatException e) {
                 out.println("X can not be parsed");
                 dataIsCorrect = false;
@@ -41,13 +37,8 @@ public class ControllerServlet extends HttpServlet {
         if (yString == null) {
             out.println("Y is not assigned");
         } else {
-            float y;
             try {
-                y = Float.parseFloat(yString);
-                if (y <= -5 || y>= 5) {
-                    out.println("Y is not valid");
-                    dataIsCorrect = false;
-                }
+                Float.parseFloat(yString);
             } catch (NumberFormatException e) {
                 out.println("Y can not be parsed");
                 dataIsCorrect = false;

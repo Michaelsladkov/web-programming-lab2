@@ -3,10 +3,10 @@ let rBoxes;
 
 function switchRAction(eventObj) {
     clearErrors();
-    validation();
 }
 
-function switchYAction(eventObj) {
+function switchXAction(eventObj) {
+    $("#hidden-x").attr("value", getXNumberValue())
     clearErrors();
     validation();
 }
@@ -17,4 +17,8 @@ function setRBoxes(arrayOfBoxes) {
 
 function setXBoxes(arrayOfBoxes) {
     xBoxes = arrayOfBoxes;
+}
+
+function getXNumberValue() {
+    return $('#x_value :checked').val();
 }

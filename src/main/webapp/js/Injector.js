@@ -8,11 +8,11 @@ window.onload = function () {
         rBox.onclick = switchRAction;
     }
     for (let xBox of xBoxes) {
-        xBox.onclick = switchYAction;
+        xBox.onclick = switchXAction;
     }
     let errorDisplay = document.getElementById("errorDisplay");
     setDisplay(errorDisplay);
     setFormAndBoxesForValidator(form, xBoxes, rBoxes);
     form.elements.Y.onclick = clearErrors;
-    $("graph").on("click", processClick);
+    $("#graph").on("click", processClick);
 }
