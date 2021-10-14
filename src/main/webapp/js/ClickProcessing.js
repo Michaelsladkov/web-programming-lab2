@@ -1,19 +1,18 @@
-const centerX = 291;
-const centerY = 235;
-const rX = 400;
-const rY = 343;
+const centerX = 148;
+const centerY = 143;
+const rX = 108;
+const rY = 110;
 function processClick (eventObj) {
     let r = getRNumberValue();
     if (!checkR()) return;
-    let rawX = eventObj.pageX - centerX;
-    let rawY = centerY - eventObj.pageY;
-    let xNormalized = rawX / (rX - centerX);
-    let yNormalized = rawY / (rY - centerY);
+    let rawX = eventObj.pageX - $("#graph").offset().left - centerX;
+    let rawY = centerY + $("#graph").offset().top - eventObj.pageY;
+    let xNormalized = rawX / (rX);
+    let yNormalized = rawY / (rY);
     let x = xNormalized * r;
     let y = yNormalized * r;
     x = x.toFixed(2);
     y = y.toFixed(2);
-    console.log(x + "   " + y);
     sendForm(x, y);
 }
 
