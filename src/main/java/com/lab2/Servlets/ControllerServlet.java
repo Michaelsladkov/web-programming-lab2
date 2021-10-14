@@ -16,7 +16,6 @@ public class ControllerServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         session.setAttribute("start-time", System.nanoTime());
-        System.out.println("time started");
         request.setCharacterEncoding("UTF-8");
         boolean dataIsCorrect = true;
         String xString = request.getParameter("X");
