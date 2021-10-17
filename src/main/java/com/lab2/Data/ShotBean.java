@@ -40,7 +40,9 @@ public class ShotBean {
         return executionTime;
     }
 
-    public String isSuccess() {
+    public String getSuccess() {
         return success ? "попал" : "не попал";
     }
+
+    public boolean isSuccess() {return success;}
 }

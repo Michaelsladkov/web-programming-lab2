@@ -15,4 +15,17 @@ window.onload = function () {
     setFormAndBoxesForValidator(form, xBoxes, rBoxes);
     form.elements.Y.onclick = clearErrors;
     $("#graph").on("click", processClick);
+    restoreForm();
+}
+
+function restoreForm() {
+    if ($("#0x").text()){
+        $("#y-field").attr("value", $("#0y").text());
+        let r_id = 'r' + $("#0r").text();
+        document.getElementById(r_id).checked = true;
+        let x_id = $("#0x").text() + 'X';
+        if (document.getElementById(x_id)) {
+            document.getElementById(x_id).checked = true;
+        }
+    }
 }
